@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+<style>
+ #contact{ 
+ width:90%; 
+ height:100vh; 
+ } 
+ body{ 
+
+background:#D8BFD8; 
+background-image: url("images/contact.jpg");
+background-size: cover;
+
+ } 
+ h1{ 
+ text-align: center; 
+ font-family: Verdana, Geneva, Tahoma, sans-serif; 
+ color: whitesmoke;
+ } 
+ form{ 
+ position: absolute; 
+ top:10%; 
+ left:10%; 
+ font-family: Verdana, Geneva, Tahoma, sans-serif; 
+ } 
+ form input{ 
+ margin-left:20px; 
+
+ height:30px; 
+ color:black; 
+ font-size:30px; 
+ margin-top:40px; 
+ border-radius: 20px; 
+ border:none; 
+ background-color: rgb(223, 234, 230); 
+ } 
+ form textarea{ 
+ margin-left:180px; 
+ width:300px; 
+ height:200px; 
+ color: black; 
+ font-size:30px; 
+ margin-top:40px; 
+ border-radius: 20px; 
+ border:none; 
+ background-color:rgb(223, 234, 230); 
+ } 
+ label{ 
+ font-size: 24px; 
+ color:white;
+ } 
+ textarea{ 
+ margin-left:160px; 
+ } 
+ .msg{ 
+ position:absolute; 
+ bottom:25%; 
+ } 
+ /*#butn{ 
+ width:100px; 
+ font-size:15px; 
+ color:white; 
+ background-color: black; 
+ } */
+ #butn {
+  width: 100px;
+  height: 60px; 
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin: auto;
+  margin-top: 20px;
+}
+#butn:hover {
+  background-color: #630c0c; /* Darken the background color on hover */
+}
+</style>
+</head>
+<body>
+<div id="contact">
+<h1>Contact Us</h1>
+<form action="\contacts" method="post">
+<label for=""> First Name: </label>
+<input type="text" name="firstname">
+<br>
+<label for="">Last Name:</label>
+<input type="text" name="lastname">
+<br>
+<label for="">Register Id:</label>
+<input type="email"name="email">
+<br>
+<label for="">Mobile No:</label>
+<input type="number"name="number">
+<br>
+<label for=""class="msg">Message:</label>
+<textarea name="msg" id="" cols="400" rows="404"></textarea>
+<br>
+<input id="butn" type="submit" value="submit" text-align="center">
+</form>
+</table>
+</div>
+</body>
+</html>

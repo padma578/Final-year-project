@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Health Hub - appointment form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start; /* Aligning form to the left side */
+        align-items: center;
+        height: 100vh;
+        background-color:#D8BFD8;
+        background-attachment: fixed;
+        background-image: url(images/home6.jpg);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+      }
+      .container {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        height: auto;
+      }
+
+      h2 {
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 3px;
+      }
+      .form-group input,
+      .form-group select {
+        width: 500px;
+        padding: 4px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .form-group input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+      }
+      .form-group input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+      img{
+         width: 700px;
+         height: 720px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Welcome to Health Hub-Appointment Form</h2>
+          <form id="appointment" action="/appointment" method="post">
+            <div class="form-group">
+              <label for="firstname">Name:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth:</label>
+              <input type="date" id="dob" name="dob" required />
+            </div>
+            <div class="form-group">
+              <label for="age">AGE:</label>
+              <input type="text" id="age" name="age" required />
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact">Contact No:</label>
+              <input type="tel" id="contact" name="contact" required />
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required />
+
+
+            </div>
+            <div class="form-group">
+              <label for="timings">Timings</label>
+              <select id="timings" name="timings" required>
+                <option value="">Select</option>
+                <option value="9am-10am">9am-10am</option>
+                <option value="11am-12pm">11am-12pm</option>
+                <option value="2pm-3pm">2pm-3pm</option>
+                <option value="4pm-5pm">4pm-5pm</option>
+              </select> 
+            </div>
+            <div class="form-group">
+              <label for="services">services:</label>
+              <select id="services" name="services" required>
+                <option value="">Select</option>
+                <option value="mental care">mental care</option>
+                <option value="Meditation">meditation</option>
+                <option value="yoga">yoga</option>
+                <option value="Food guidance">Food guidance</option>
+                <option value="Day to day tracking">Day to day tracking</option>
+                <option value="Exercise">Exercise</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <input type="submit" value="Submit"  />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <img src="images/login.webp" />
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

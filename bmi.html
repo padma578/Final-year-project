@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url("images/bmi1.jpg");
+        background-size: cover;
+      }
+
+      .container {
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #ddd;
+      }
+
+      .container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      table th,
+      table td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      input[type="number"] {
+        width: calc(100% - 16px);
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>BMI Calculator</h2>
+      <table>
+        <tr>
+          <th>Attribute</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td><label for="weight">Weight (kg):</label></td>
+          <td>
+            <input
+              type="number"
+              id="weight"
+              placeholder="Enter your weight in kilograms"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="height">Height (m):</label></td>
+          <td>
+            <input
+              type="number"
+              id="height"
+              placeholder="Enter your height in meters"
+            />
+          </td>
+        </tr>
+      </table>
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function calculateBMI() {
+        var weightInput = document.getElementById("weight");
+        var heightInput = document.getElementById("height");
+        var resultDiv = document.getElementById("result");
+
+        var weight = parseFloat(weightInput.value);
+        var height = parseFloat(heightInput.value);
+
+        if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+          resultDiv.textContent = "Please enter valid weight and height.";
+          return;
+        }
+
+        var bmi = weight / (height * height);
+
+        var bmiCategory;
+        if (bmi < 18.5) {
+          bmiCategory = "Underweight";
+        } else if (bmi < 25) {
+          bmiCategory = "Normal weight";
+        } else if (bmi < 30) {
+          bmiCategory = "Overweight";
+        } else {
+          bmiCategory = "Obese";
+        }
+
+        resultDiv.innerHTML =
+          "<p>Your BMI is: " +
+          bmi.toFixed(2) +
+          "</p><p>BMI Category: " +
+          bmiCategory +
+          "</p>";
+      }
+    </script>
+  </body>
+</html>

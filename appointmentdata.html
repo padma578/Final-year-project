@@ -1,0 +1,61 @@
+<!-- appointmentdata.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      
+      body {
+        background-size: cover;
+        background-color: paleturquoise;
+        background-image: url("images/apoind.jpg");
+        
+        font-size: large;
+      }
+      table{
+        margin-top: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 align="center">check your appointments here...</h2>
+    <table id="appointmentsTable" border="5" align="center">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Contact</th>
+        <th>Services</th>
+        <th>date</th>
+        <th>Timings</th>
+        
+      </tr>
+      <!-- Appointment data will be dynamically added here -->
+    </table>
+
+    <script>
+
+      // Fetch appointment data based on the user's submitted email
+
+      fetch(`/api/appointments`)
+          .then(response => response.json())
+          .then(appointments => {
+              const table = document.getElementById('appointmentsTable');
+              appointments.forEach(appointment => {
+                  const row = table.insertRow();
+                  row.insertCell(0).textContent = appointment.name;
+                  row.insertCell(1).textContent = appointment.email;
+                  row.insertCell(2).textContent = appointment.age;
+                  row.insertCell(3).textContent = appointment.dob;
+                  row.insertCell(4).textContent = appointment.gender;
+                  row.insertCell(5).textContent = appointment.contact;
+                  row.insertCell(6).textContent = appointment.services;
+                  row.insertCell(7).textContent = appointment.date;
+                  row.insertCell(8).textContent = appointment.timings;
+              });
+          })
+          .catch(error => console.error('Error loading appointments:', error));
+    </script>
+  </body>
+</html>
